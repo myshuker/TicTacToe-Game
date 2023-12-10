@@ -1,7 +1,7 @@
 .gameCard {
   height: 100px;
   width: 100px;
-  border: 2px solid black;
+  border: 2px solid white;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -11,8 +11,8 @@
 }
 
 .X {
-  color: red;
+  color: rgb(255, 0, 0);
 }
 .O {
-  color: blue;
+  color: rgb(6, 8, 111);
 }

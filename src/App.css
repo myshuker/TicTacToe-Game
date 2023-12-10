@@ -4,12 +4,14 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: #0f4e62;
 }
 
 .gameBox {
   height: 300px;
   width: 300px;
-  border: 2px solid black;
+  border: 2px solid blawhiteck;
   display: flex;
   flex-wrap: wrap;
+  background: #14627a;
 }

@@ -17,15 +17,17 @@ function App() {
   const [cells, setCells] = useState(["", "", "", "", "", "", "", "", ""]);
   const [player, setPlayer] = useState("1");
   const [winner, setWinner] = useState("");
+  const [winnerColor, setWinnerColor] = useState(true);
 
   useEffect(() => {
     winProbability.forEach((win) => {
       const playerFirstWin = win.every((cell) => cells[cell] === "x");
       const playerSecWin = win.every((cell) => cells[cell] === "o");
       if (playerFirstWin) {
-        setWinner(" The Winner is Player 1");
+        setWinner(" Player 1 Win!");
       } else if (playerSecWin) {
-        setWinner("The Winner is Player 2");
+        setWinner("Player 2 Win!");
+        setWinnerColor(false);
       }
     });
   }, [cells, winner]);
@@ -34,10 +36,6 @@ function App() {
   if (cells.every((cell) => cell !== "") && !winner) {
     setWinner("Draw!");
   }
-
-  const resultStyle = {
-    color: "blue",
-  };
 
   return (
     <div className="App">
@@ -59,7 +57,7 @@ function App() {
           {`Turn Player `} {player}
         </h1>
       )}
-      <h2 style={resultStyle}> {winner} </h2>
+      <h2 className={winnerColor ? "X" : "O"}> {winner} </h2>
     </div>
   );
 }
